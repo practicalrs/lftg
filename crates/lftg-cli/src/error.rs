@@ -3,6 +3,7 @@ use std::{error, fmt};
 #[derive(Debug)]
 pub enum Error {
     OllamaHostAddresMissing,
+    OllamaRequestProblem,
 }
 
 impl error::Error for Error {}
