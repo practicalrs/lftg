@@ -5,8 +5,8 @@ use std::error::Error;
 mod app;
 mod config;
 mod error;
-mod fairy_tale;
 mod ollama;
+mod story;
 
 type Result<T> = std::result::Result<T, Box<dyn Error + Send + Sync>>;
 

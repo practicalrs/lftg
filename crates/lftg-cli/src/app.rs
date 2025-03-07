@@ -1,4 +1,4 @@
-use crate::{Result, config, fairy_tale};
+use crate::{Result, config, story};
 use clap::Parser;
 use std::sync::Arc;
 
@@ -18,7 +18,7 @@ pub async fn run() -> Result<()> {
     let args = Args::parse();
     let config = Arc::new(config::load(args)?);
 
-    fairy_tale::generate(config).await?;
+    story::generate(config).await?;
 
     Ok(())
 }
