@@ -1,4 +1,4 @@
-use crate::{Result, config::Config, ollama::{self, Message}, story};
+use crate::{config::Config, extract, ollama::{self, Message}, story, Result};
 use std::sync::Arc;
 
 pub async fn generate(config: Arc<Config>, outline: &str) -> Result<()> {
@@ -43,8 +43,8 @@ Respond in the following JSON format ```json [{{"story_structure_part": string, 
     messages.push(message);
 
     let response = ollama::request(config.clone(), messages.clone()).await?;
-
-    println!("response = {response}");
+    let json = extract::extract_json(&response);
+    println!("json = {json}");
 
     Ok(())
 }

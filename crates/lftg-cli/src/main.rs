@@ -6,6 +6,7 @@ mod app;
 mod chapter;
 mod config;
 mod error;
+mod extract;
 mod ollama;
 mod story;
 
