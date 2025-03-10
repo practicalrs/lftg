@@ -3,6 +3,7 @@
 use std::error::Error;
 
 mod app;
+mod chapter;
 mod config;
 mod error;
 mod ollama;
